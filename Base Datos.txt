@@ -1,0 +1,38 @@
+create database if not exists Inventario;
+
+use Inventario;
+
+create table usuarios(
+	id int auto_increment primary key,
+	nombreUsuario varchar(15) not null,
+	pass varchar(15) not null,
+	nombre varchar (20) not null,
+	apellido_paterno varchar (20) not null,
+	apellido_materno varchar (20) not null,
+	tipo varchar(10) default 'cliente',
+	registro date not null);
+
+create table prestamo(
+	id int auto_increment primary key,
+	idEmpleado int not null,
+	idCliente int not null,
+	idProducto int not null,
+	fechaPrestamo date not null,
+	fechaRegreso date not null);
+
+create table productos(
+	id int auto_increment primary key,
+	descripcion varchar(50)not null,
+	unidad int,
+	existencia int,
+	ubicacion varchar (20) not null,
+	registro date not null,
+	idRegistro int);
+
+alter table prestamo add foreign key(idEmpleado) 
+references usuarios (id);
+
+
+alter table prestamo add foreign key(idProducto) 
+references productos (id);
+
