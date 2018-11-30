@@ -15,8 +15,8 @@
          <form action="clase.jsp" method="post">
             <div>
                 <p>Registro Cliente</p>
-                <h5>Nombre de usuario</h5>
-                <input type="text" name ="nombreUsuario" placeholder="Nombre de Usuario">
+                <h5>ID de usuario</h5>
+                <input type="text" name ="IDUsuario" placeholder="Nombre de Usuario">
                 <h5>Contraseña</h5>
                 <input type="password" name ="contraseña" placeholder="contraseña">
                 <h5>Nombre</h5>
